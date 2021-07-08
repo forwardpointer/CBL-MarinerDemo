@@ -18,10 +18,11 @@ cockpit for mariner
 %setup -q
 
 %build
+./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
 make %{?_smp_mflags}
 
 %install
-make DESTDIR=%{buildroot} install
+make install
 
 %files
 %defattr(-,root,root)
