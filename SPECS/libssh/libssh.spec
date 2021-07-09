@@ -25,6 +25,7 @@ cmake -DCMAKE_INSTALL_PREFIX=/usr ..
 make
 
 %install
+cd build
 make install
 chmod a+x /usr/include/libssh
 
