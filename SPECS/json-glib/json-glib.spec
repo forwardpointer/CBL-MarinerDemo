@@ -32,4 +32,4 @@ ln -s /usr/local/lib/libjson-glib-1.0.so /usr/lib/libjson-glib-1.0.so
 
 %files
 %defattr(775,root,root,775)
-# %{_bindir}
+/usr/local/lib/pkgconfig/json-glib-1.0.pc
