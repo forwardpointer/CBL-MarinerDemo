@@ -15,15 +15,13 @@ BuildRequires: gcc
 cockpit for mariner
 
 %prep
-# %setup -q
+%setup -q
 
 %build
-# ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-cd /usr/src/mariner/BUILD/cockpit-1.0.0
+./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
 make %{?_smp_mflags}
 
 %install
-cd /usr/src/mariner/BUILD/cockpit-1.0.0
 make install
 cat > /etc/pam.d/cockpit << EOF
     #%PAM-1.0 
