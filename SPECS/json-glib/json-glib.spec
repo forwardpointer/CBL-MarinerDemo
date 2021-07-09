@@ -22,9 +22,9 @@ json-glib
 meson _build .
 cd _build
 ninja
-meson install
 
 %install
+cd _build
 meson install
 ln -s /usr/local/lib/pkgconfig/json-glib-1.0.pc /usr/lib/pkgconfig/json-glib-1.0.pc
 ln -s /usr/local/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so.0
