@@ -9,7 +9,11 @@ Vendor:         Microsoft
 Distribution:   Mariner
 Source0:        http://dev.azure.com/mariner-org/mariner/_git/samples/%{name}-%{version}.tar.gz
 
-BuildRequires: gcc
+BuildRequires:  build-essential
+BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
+BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
+BuildRequires:  cmake, zlib-devel, openssl-devel
+BuildRequires:  which
 
 %description
 cockpit for mariner
