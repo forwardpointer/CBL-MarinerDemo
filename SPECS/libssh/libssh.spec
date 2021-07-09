@@ -31,4 +31,3 @@ chmod a+x /usr/include/libssh
 
 %files
 %defattr(775,root,root,775)
-/usr/include/libssh
