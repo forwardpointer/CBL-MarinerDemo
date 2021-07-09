@@ -15,10 +15,10 @@ BuildRequires: gcc
 cockpit for mariner
 
 %prep
-# %setup -q
+%setup -q
 
 %build
-# ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
+./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
 cd /usr/src/mariner/BUILD/cockpit-1.0.0
 make %{?_smp_mflags}
 
@@ -42,10 +42,6 @@ cat > /etc/pam.d/cockpit << EOF
     EOF
 chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
-
-%files
-%defattr(-,root,root)
-%{_bindir}
 
 %changelog
 * Mon Jun 15 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 1.0.0-2
