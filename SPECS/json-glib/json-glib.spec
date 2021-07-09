@@ -10,7 +10,7 @@ Distribution:   Mariner
 Source0:        http://dev.azure.com/mariner-org/mariner/_git/samples/%{name}-%{version}.tar.gz
 
 BuildRequires:  build-essential
-BuildRequires:  meson, ninja, gettext
+BuildRequires:  meson, ninja-build, gettext
 
 %description
 json-glib
