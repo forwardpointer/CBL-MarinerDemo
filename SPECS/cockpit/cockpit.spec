@@ -16,10 +16,10 @@ cockpit for mariner
 
 %prep
 # %setup -q
-cd /usr/src/mariner/BUILD/cockpit-1.0.0
 
 %build
 # ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
+cd /usr/src/mariner/BUILD/cockpit-1.0.0
 make %{?_smp_mflags}
 
 %install
