@@ -16,16 +16,17 @@ BuildRequires:  gettext
 libssh
 
 %prep
-# %setup -q
+%setup -q
 
 %build
-# mkdir build
-# cd build
-# cmake -DCMAKE_INSTALL_PREFIX=/usr .. 
-# make
+mkdir build
+cd build
+cmake -DCMAKE_INSTALL_PREFIX=/usr .. 
+make
 
 %install
-cd libssh-0.9.5/build
+# cd libssh-0.9.5/build
+cd build
 make install
 chmod a+x /usr/include/libssh
 

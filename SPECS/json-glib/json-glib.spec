@@ -31,5 +31,5 @@ ln -s /usr/local/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so.0
 ln -s /usr/local/lib/libjson-glib-1.0.so /usr/lib/libjson-glib-1.0.so
 
 %files
-%defattr(-,root,root)
-%{_bindir}
+%defattr(775,root,root,775)
+# %{_bindir}
