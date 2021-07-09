@@ -30,8 +30,3 @@ chmod a+x /usr/include/libssh
 
 %files
 %license LICENSE
-
-%changelog
-* Fri July 08 2021 Shane Guan <shaneguan@microsoft.com> 1.0.0-1
-- Initial version of libssh package
-
