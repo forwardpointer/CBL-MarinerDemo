@@ -1,5 +1,5 @@
-Summary:        A package to provide cockpit for mariner
-Name:           cockpit
+Summary:        A package to provide json-glib for mariner
+Name:           json-glib
 Version:        1.0.0
 Release:        2%{?dist}
 License:        MIT

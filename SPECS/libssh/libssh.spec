@@ -1,5 +1,5 @@
-Summary:        A package to provide cockpit for mariner
-Name:           cockpit
+Summary:        A package to provide libssh for mariner
+Name:           libssh
 Version:        0.9.5
 Release:        2%{?dist}
 License:        MIT
