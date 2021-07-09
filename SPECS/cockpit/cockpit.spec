@@ -15,11 +15,10 @@ BuildRequires: gcc
 cockpit for mariner
 
 %prep
-%setup -q
+# %setup -q
 
 %build
-./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-cd /usr/src/mariner/BUILD/cockpit-1.0.0
+# ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
 make %{?_smp_mflags}
 
 %install
@@ -39,7 +38,7 @@ cat > /etc/pam.d/cockpit << EOF
     session    optional     pam_keyinit.so force revoke 
     session    optional     pam_ssh_add.so 
     session    include      system-session 
-    EOF
+EOF
 chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
 
