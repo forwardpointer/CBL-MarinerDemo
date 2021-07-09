@@ -45,6 +45,10 @@ EOF
 chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
 
+%files
+%defattr(-,root,root)
+%{_bindir}
+
 # %files
 # %license LICENSE
 

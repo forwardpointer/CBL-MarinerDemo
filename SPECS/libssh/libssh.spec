@@ -28,3 +28,7 @@ make
 cd build
 make install
 chmod a+x /usr/include/libssh
+
+%files
+%defattr(-,root,root)
+%{_bindir}

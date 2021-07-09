@@ -29,3 +29,7 @@ meson install
 ln -s /usr/local/lib/pkgconfig/json-glib-1.0.pc /usr/lib/pkgconfig/json-glib-1.0.pc
 ln -s /usr/local/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so.0
 ln -s /usr/local/lib/libjson-glib-1.0.so /usr/lib/libjson-glib-1.0.so
+
+%files
+%defattr(-,root,root)
+%{_bindir}
