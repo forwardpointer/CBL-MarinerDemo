@@ -25,7 +25,7 @@ libssh
 # make
 
 %install
-cd build
+cd libssh-0.9.5/build
 make install
 chmod a+x /usr/include/libssh
 
