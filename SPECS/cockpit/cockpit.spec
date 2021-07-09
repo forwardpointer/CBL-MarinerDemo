@@ -41,6 +41,9 @@ EOF
 chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
 
+%files
+%license LICENSE
+
 %changelog
 * Fri July 09 2021 Shane Guan <shaneguan@microsoft.com> 1.0.0-1
 - Initial version of cockpit package
