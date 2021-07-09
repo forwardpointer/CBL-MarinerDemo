@@ -28,6 +28,3 @@ make
 cd build
 make install
 chmod a+x /usr/include/libssh
-
-%files
-%license LICENSE

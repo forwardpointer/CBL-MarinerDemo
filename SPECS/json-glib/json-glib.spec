@@ -29,11 +29,3 @@ meson install
 ln -s /usr/local/lib/pkgconfig/json-glib-1.0.pc /usr/lib/pkgconfig/json-glib-1.0.pc
 ln -s /usr/local/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so.0
 ln -s /usr/local/lib/libjson-glib-1.0.so /usr/lib/libjson-glib-1.0.so
-
-%files
-%license LICENSE
-
-%changelog
-* Fri July 09 2021 Shane Guan <shaneguan@microsoft.com> 1.0.0-1
-- Initial version of json-glib package
-
