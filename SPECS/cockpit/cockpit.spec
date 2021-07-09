@@ -42,8 +42,6 @@ chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
 
 %changelog
-* Mon Jun 15 2020 Pawel Winogrodzki <pawelwi@microsoft.com> 1.0.0-2
-- Adding 'BuildRequires' for the sake of demonstrating external, build-time dependencies.
-* Wed Oct 09 2019 Jonathan Slobodzian <joslobo@microsoft.com> 1.0.0-1
-- Initial version of demo package
+* Fri July 09 2021 Shane Guan <shaneguan@microsoft.com> 1.0.0-1
+- Initial version of cockpit package
 
