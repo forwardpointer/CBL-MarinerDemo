@@ -21,7 +21,7 @@ for f in /usr/lib/pkgconfig/json-glib-1.0.pc /usr/lib/libjson-glib-1.0.so.0 /usr
 do 
     if [ -f f ];
     then rm f
-    else echo file doesn't exist
+    else echo file doesnt exist
     fi
 done
 
