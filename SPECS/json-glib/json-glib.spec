@@ -20,7 +20,8 @@ json-glib
 for f in /usr/lib/pkgconfig/json-glib-1.0.pc /usr/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so
 do 
     if [ -f f ];
-    then rm f;
+    then rm f
+    else echo file doesn't exist
     fi
 done
 
