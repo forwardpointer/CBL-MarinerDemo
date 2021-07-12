@@ -17,9 +17,12 @@ json-glib
 
 %prep
 %setup -q
-rm /usr/lib/pkgconfig/json-glib-1.0.pc &> /dev/null
-rm /usr/lib/libjson-glib-1.0.so.0 &> /dev/null
-rm /usr/lib/libjson-glib-1.0.so &> /dev/null
+for f in /usr/lib/pkgconfig/json-glib-1.0.pc /usr/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so
+do 
+    if [ -f f ];
+    then rm f;
+    fi
+done
 
 %build
 meson _build .
