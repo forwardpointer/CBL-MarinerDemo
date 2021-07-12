@@ -17,6 +17,9 @@ json-glib
 
 %prep
 %setup -q
+rm /usr/lib/pkgconfig/json-glib-1.0.pc
+rm /usr/lib/libjson-glib-1.0.so.0
+rm /usr/lib/libjson-glib-1.0.so
 
 %build
 meson _build .
