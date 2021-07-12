@@ -34,7 +34,7 @@ make
 # cd libssh-0.9.5/build
 cd build
 make DESTDIR=%{buildroot} install
-chmod a+x /usr/include/libssh
+chmod a+x %{buildroot}/usr/include/libssh
 
 %files
 # %defattr(775,root,root,775)
