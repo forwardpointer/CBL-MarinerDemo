@@ -27,8 +27,9 @@ make
 %install
 # cd libssh-0.9.5/build
 cd build
-make install
+make DESTDIR=%{buildroot} install
 chmod a+x /usr/include/libssh
 
 %files
-%defattr(775,root,root,775)
+# %defattr(775,root,root,775)
+/usr/include/libssh
