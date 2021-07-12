@@ -33,6 +33,9 @@ ln -s %{buildroot}/usr/local/lib/pkgconfig/json-glib-1.0.pc %{buildroot}/usr/lib
 ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so.0 %{buildroot}/usr/lib/libjson-glib-1.0.so.0
 ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so %{buildroot}/usr/lib/libjson-glib-1.0.so
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %files
 # %defattr(775,root,root,775)
 /usr/local/lib/pkgconfig/json-glib-1.0.pc
