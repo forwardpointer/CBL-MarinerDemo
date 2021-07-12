@@ -33,3 +33,8 @@ chmod a+x /usr/include/libssh
 %files
 # %defattr(775,root,root,775)
 /usr/include/libssh
+/usr/lib64/cmake/libssh
+/usr/lib64/libssh.so
+/usr/lib64/libssh.so.4
+/usr/lib64/libssh.so.4.8.6
+/usr/lib64/pkgconfig/libssh.pc
