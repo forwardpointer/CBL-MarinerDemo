@@ -17,6 +17,7 @@ json-glib
 
 %prep
 %setup -q
+mkdir -p %{buildroot}/usr/lib/pkgconfig/
 
 %build
 meson _build .
