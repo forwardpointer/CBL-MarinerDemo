@@ -34,7 +34,7 @@ ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so.0 %{buildroot}/usr/lib/libj
 ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so %{buildroot}/usr/lib/libjson-glib-1.0.so
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 # %defattr(775,root,root,775)
