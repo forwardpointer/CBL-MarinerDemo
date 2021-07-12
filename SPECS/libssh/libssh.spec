@@ -9,8 +9,22 @@ Vendor:         Microsoft
 Distribution:   Mariner
 Source0:        http://dev.azure.com/mariner-org/mariner/_git/samples/%{name}-%{version}.tar.xz
 
-BuildRequires:  build-essential
+BuildRequires:  build-essential, cmake
 BuildRequires:  gettext
+BuildRequires:  gcc-c++
+BuildRequires:  gnupg2
+BuildRequires:  openssl-devel
+BuildRequires:  pkgconfig
+BuildRequires:  zlib-devel
+BuildRequires:  krb5-devel
+BuildRequires:  libcmocka-devel
+BuildRequires:  pam_wrapper
+BuildRequires:  socket_wrapper
+BuildRequires:  nss_wrapper
+BuildRequires:  uid_wrapper
+BuildRequires:  openssh-clients
+BuildRequires:  openssh-server
+BuildRequires:  nmap-ncat
 
 %description
 libssh
