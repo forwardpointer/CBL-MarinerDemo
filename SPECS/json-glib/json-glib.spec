@@ -10,20 +10,13 @@ Distribution:   Mariner
 Source0:        http://dev.azure.com/mariner-org/mariner/_git/samples/%{name}-%{version}.tar.gz
 
 BuildRequires:  build-essential
-BuildRequires:  meson, ninja-build, gettext
+BuildRequires:  meson, ninja-build, gettext, glib-devel
 
 %description
 json-glib
 
 %prep
 %setup -q
-for f in /usr/lib/pkgconfig/json-glib-1.0.pc /usr/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so
-do 
-    if [ -f $f ];
-    then rm $f
-    else echo file $f doesnt exist
-    fi
-done
 
 %build
 meson _build .
@@ -32,10 +25,10 @@ ninja
 
 %install
 cd _build
-meson install
-ln -s /usr/local/lib/pkgconfig/json-glib-1.0.pc /usr/lib/pkgconfig/json-glib-1.0.pc
-ln -s /usr/local/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so.0
-ln -s /usr/local/lib/libjson-glib-1.0.so /usr/lib/libjson-glib-1.0.so
+DESTDIR=%{buildroot} meson install
+ln -s %{buildroot}/usr/local/lib/pkgconfig/json-glib-1.0.pc %{buildroot}/usr/lib/pkgconfig/json-glib-1.0.pc
+ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so.0 %{buildroot}/usr/lib/libjson-glib-1.0.so.0
+ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so %{buildroot}/usr/lib/libjson-glib-1.0.so
 
 %files
 # %defattr(775,root,root,775)
