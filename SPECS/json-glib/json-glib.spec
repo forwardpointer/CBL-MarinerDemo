@@ -19,9 +19,9 @@ json-glib
 %setup -q
 for f in /usr/lib/pkgconfig/json-glib-1.0.pc /usr/lib/libjson-glib-1.0.so.0 /usr/lib/libjson-glib-1.0.so
 do 
-    if [ -f f ];
-    then rm f
-    else echo file doesnt exist
+    if [ -f $f ];
+    then rm $f
+    else echo file $f doesnt exist
     fi
 done
 
