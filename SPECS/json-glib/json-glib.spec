@@ -22,31 +22,28 @@ json-glib
 mkdir -p %{buildroot}/usr/lib/pkgconfig/
 
 %build
-meson _build .
+meson --prefix=/usr _build .
 cd _build
 ninja
 
 %install
 cd _build
 DESTDIR=%{buildroot} meson install
-ln -s %{buildroot}/usr/local/lib/pkgconfig/json-glib-1.0.pc %{buildroot}/usr/lib/pkgconfig/json-glib-1.0.pc
-ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so.0 %{buildroot}/usr/lib/libjson-glib-1.0.so.0
-ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so %{buildroot}/usr/lib/libjson-glib-1.0.so
-
-%clean
-rm -rf %{buildroot}
+# ln -s %{buildroot}/usr/local/lib/pkgconfig/json-glib-1.0.pc %{buildroot}/usr/lib/pkgconfig/json-glib-1.0.pc
+# ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so.0 %{buildroot}/usr/lib/libjson-glib-1.0.so.0
+# ln -s %{buildroot}/usr/local/lib/libjson-glib-1.0.so %{buildroot}/usr/lib/libjson-glib-1.0.so
 
 %files
 # %defattr(775,root,root,775)
-/usr/local/lib/pkgconfig/json-glib-1.0.pc
+# /usr/local/lib/pkgconfig/json-glib-1.0.pc
 /usr/lib/pkgconfig/json-glib-1.0.pc
-/usr/local/lib/libjson-glib-1.0.so
+# /usr/local/lib/libjson-glib-1.0.so
 /usr/lib/libjson-glib-1.0.so
-/usr/local/lib/libjson-glib-1.0.so
+# /usr/local/lib/libjson-glib-1.0.so
 /usr/lib/libjson-glib-1.0.so.0
-/usr/local/bin/json-glib-format
-/usr/local/bin/json-glib-validate
-/usr/local/lib/libjson-glib-1.0.so.0.600.3
-/usr/local/include/json-glib-1.0
-/usr/local/libexec/installed-tests/json-glib-1.0
-/usr/local/share/installed-tests/json-glib-1.0
+# /usr/local/bin/json-glib-format
+/usr/bin/json-glib-validate
+/usr/lib/libjson-glib-1.0.so.0.600.3
+/usr/include/json-glib-1.0
+/usr/libexec/installed-tests/json-glib-1.0
+/usr/share/installed-tests/json-glib-1.0
