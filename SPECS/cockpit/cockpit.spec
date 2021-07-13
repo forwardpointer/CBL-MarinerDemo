@@ -28,7 +28,6 @@ mkdir -p %{buildroot}/etc/pam.d
 make %{?_smp_mflags}
 
 %install
-cd /usr/src/mariner/BUILD/cockpit-1.0.0
 make install DESTDIR=%{buildroot}
 cat > %{buildroot}/etc/pam.d/cockpit << EOF
     #%PAM-1.0 
