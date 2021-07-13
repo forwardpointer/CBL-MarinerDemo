@@ -54,7 +54,7 @@ chmod o+rx %{buildroot}/etc/cockpit
 /etc/cockpit
 /etc/pam.d/cockpit
 /usr/share/metainfo/*cockpit*.xml
-/usr/share/polkit-1/action/org.cockpit-project.cockpit-bridge.policy
+/usr/share/polkit-1/actions/org.cockpit-project.cockpit-bridge.policy
 /usr/share/pixmaps/cockpit*.png
 /usr/lib/tmpfiles.d/cockpit-tempfiles.conf
 /lib/systemd/system/cockpit*.socket
