@@ -14,6 +14,7 @@ BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
 BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
 BuildRequires:  cmake, zlib-devel, openssl-devel
 BuildRequires:  which
+BuildRequires:  json-glib, libssh
 
 %description
 cockpit for mariner
@@ -26,7 +27,7 @@ cockpit for mariner
 make %{?_smp_mflags}
 
 %install
-make install
+make install DESTDIR=%{buildroot}
 cat > /etc/pam.d/cockpit << EOF
     #%PAM-1.0 
     # this MUST be first in the "auth" stack as it sets PAM_USER 
@@ -46,8 +47,17 @@ chmod -R go+rx /usr/share/cockpit
 chmod o+rx /etc/cockpit
 
 %files
-%defattr(-,root,root)
-%{_bindir}
+# %defattr(-,root,root)
+/usr/share/cockpit
+/etc/cockpit
+/etc/pam.d/cockpit
+/usr/share/metainfo/*cockpit*.xml
+/usr/share/polkit-1/action/org.cockpit-project.cockpit-bridge.policy
+/usr/share/pixmaps/cockpit*.png
+/usr/lib/tmpfiles.d/cockpit-tempfiles.conf
+/lib/systemd/system/cockpit*.socket
+/lib/systemd/system/cockpit*.service
+/lib/systemd/system/system-cockpithttps.slice
 
 # %files
 # %license LICENSE
