@@ -20,15 +20,17 @@ BuildRequires:  which
 cockpit for mariner
 
 %prep
-%setup -q
+# %setup -q
+mkdir -p %{buildroot}/etc/pam.d
 
 %build
-./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-make %{?_smp_mflags}
+# ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
+# make %{?_smp_mflags}
 
 %install
+cd %{build}/cockpit-1.0.0
 make install DESTDIR=%{buildroot}
-cat > /etc/pam.d/cockpit << EOF
+cat > %{buildroot}/etc/pam.d/cockpit << EOF
     #%PAM-1.0 
     # this MUST be first in the "auth" stack as it sets PAM_USER 
     # user_unknown is definitive, so die instead of ignore to avoid subsequent modules mess up the error code 
@@ -43,8 +45,8 @@ cat > /etc/pam.d/cockpit << EOF
     session    optional     pam_ssh_add.so 
     session    include      system-session 
 EOF
-chmod -R go+rx /usr/share/cockpit
-chmod o+rx /etc/cockpit
+chmod -R go+rx %{buildroot}/usr/share/cockpit
+chmod o+rx %{buildroot}/etc/cockpit
 
 %files
 # %defattr(-,root,root)
