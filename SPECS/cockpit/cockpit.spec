@@ -25,6 +25,8 @@ mkdir -p %{buildroot}/etc/pam.d
 
 %build
 ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
+sudo npm install -g n
+sudo n stable
 make %{?_smp_mflags}
 
 %install
