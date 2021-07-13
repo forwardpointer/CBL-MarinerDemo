@@ -14,18 +14,18 @@ BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
 BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
 BuildRequires:  cmake, zlib-devel, openssl-devel
 BuildRequires:  which
-# BuildRequires:  json-glib, libssh
+BuildRequires:  json-glib, libssh
 
 %description
 cockpit for mariner
 
 %prep
-# %setup -q
+%setup -q
 mkdir -p %{buildroot}/etc/pam.d
 
 %build
-# ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-# make %{?_smp_mflags}
+./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
+make %{?_smp_mflags}
 
 %install
 cd /usr/src/mariner/BUILD/cockpit-1.0.0
