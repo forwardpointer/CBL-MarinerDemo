@@ -1,6 +1,6 @@
 Summary:        A package to provide json-glib for mariner
 Name:           json-glib
-Version:        1.0.0
+Version:        1.6.0
 Release:        2%{?dist}
 License:        MIT
 URL:            https://gitlab.gnome.org/GNOME/json-glib/
