@@ -14,7 +14,7 @@ BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
 BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
 BuildRequires:  cmake, zlib-devel, openssl-devel
 BuildRequires:  which, git, nodejs
-BuildRequires:  json-glib, libssh
+BuildRequires:  json-glib-devel, libssh
 
 %description
 cockpit for mariner
