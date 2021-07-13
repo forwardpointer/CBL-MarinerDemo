@@ -13,7 +13,7 @@ BuildRequires:  build-essential
 BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
 BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
 BuildRequires:  cmake, zlib-devel, openssl-devel
-BuildRequires:  which, git, npm
+BuildRequires:  which, git, nodejs
 BuildRequires:  json-glib, libssh
 
 %description
