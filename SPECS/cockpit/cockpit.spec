@@ -16,6 +16,8 @@ BuildRequires:  cmake, zlib-devel, openssl-devel
 BuildRequires:  which, git, nodejs >= 14
 BuildRequires:  json-glib-devel, libssh
 
+%define _unpackaged_files_terminate_build 0
+
 %description
 cockpit for mariner
 
@@ -61,7 +63,13 @@ chmod o+rx %{buildroot}/etc/cockpit
 /lib/systemd/system/cockpit*.socket
 /lib/systemd/system/cockpit*.service
 /lib/systemd/system/system-cockpithttps.slice
-
+/etc/issue.d/cockpit.issue
+/etc/motd.d/cockpit
+/usr/bin/cockpit-bridge
+/usr/lib/security/pam_cockpit_cert.so
+/usr/lib/security/pam_ssh_add.so
+/usr/libexec/cockpit-*
+/usr/sbin/remotectl
 # %files
 # %license LICENSE
 
