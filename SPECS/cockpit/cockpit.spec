@@ -13,7 +13,7 @@ BuildRequires:  build-essential
 BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
 BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
 BuildRequires:  cmake, zlib-devel, openssl-devel
-BuildRequires:  which, git, nodejs
+BuildRequires:  which, git, nodejs >= 14
 BuildRequires:  json-glib-devel, libssh
 
 %description
@@ -25,8 +25,8 @@ mkdir -p %{buildroot}/etc/pam.d
 
 %build
 ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-npm install -g n
-n stable
+# npm install -g n
+# n stable
 make %{?_smp_mflags}
 
 %install
