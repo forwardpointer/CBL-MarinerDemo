@@ -1,20 +1,34 @@
 Summary:        A package to provide cockpit for mariner
 Name:           cockpit
-Version:        1.0.0
+Version:        248
 Release:        2%{?dist}
 License:        MIT
 URL:            https://github.com/cockpit-project/cockpit
 Group:          Applications/Text
 Vendor:         Microsoft
 Distribution:   Mariner
-Source0:        http://dev.azure.com/mariner-org/mariner/_git/samples/%{name}-%{version}.tar.gz
+Source0:        https://github.com/cockpit-project/cockpit/releases/download/248/%{name}-%{version}.tar.xz
 
-BuildRequires:  build-essential
-BuildRequires:  krb5-devel, polkit-devel, pam-devel, gnutls-devel
-BuildRequires:  gettext, e2fsprogs-devel, glib-devel, systemd-devel
-BuildRequires:  cmake, zlib-devel, openssl-devel
-BuildRequires:  which, git, nodejs >= 14
-BuildRequires:  json-glib-devel, libssh
+BuildRequires: gcc
+BuildRequires: glib-devel
+BuildRequires: json-glib-devel
+BuildRequires: polkit-devel
+BuildRequires: pam-devel
+
+BuildRequires: autoconf automake
+BuildRequires: make
+BuildRequires: gettext >= 0.19.7
+BuildRequires: libssh-devel >= 0.8.5
+BuildRequires: openssl-devel
+BuildRequires: gnutls-devel >= 3.4.3
+BuildRequires: zlib-devel
+BuildRequires: krb5-devel >= 1.11
+# BuildRequires: libxslt-devel
+# BuildRequires: glib-networking
+BuildRequires: sed
+BuildRequires: systemd-devel >= 235
+BuildRequires:  e2fsprogs-devel
+BuildRequires:  which
 
 %define _unpackaged_files_terminate_build 0
 
@@ -27,8 +41,6 @@ mkdir -p %{buildroot}/etc/pam.d
 
 %build
 ./autogen.sh --sysconfdir=/etc --prefix=/usr --enable-debug --disable-pcp --disable-doc
-# npm install -g n
-# n stable
 make %{?_smp_mflags}
 
 %install
